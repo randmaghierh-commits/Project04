@@ -41,7 +41,7 @@ const translations = {
     langButton: "العربية"
   },
   ar: {
-    name: "راند مغيرة",
+    name: "رند مغايرة",
     navAbout: "نبذة عني",
     navSkills: "المهارات",
     navProjects: "المشاريع",
@@ -49,8 +49,8 @@ const translations = {
     navContact: "تواصل معي",
     themeDark: "الوضع الداكن",
     themeLight: "الوضع الفاتح",
-    photoAlt: "صورة شخصية لراند مغيرة",
-    heroTitle: "مرحباً، أنا راند مغيرة.",
+    photoAlt: "صورة شخصية لرند مغايرة",
+    heroTitle: "مرحباً، أنا رند مغايرة.",
     aboutP1: "أنا طالبة مطوّرة أبني المواقع من الصفر باستخدام HTML وCSS وJavaScript. أحب تحويل الصفحة الفارغة إلى شيء يستخدمه الناس فعلاً.",
     aboutP2: "يعرض هذا الموقع ما تعلمته في المشاريع السابقة، دون أي إطار عمل أو قالب جاهز.",
     skillsTitle: "المهارات",
@@ -75,7 +75,7 @@ const translations = {
     labelEmail: "البريد الإلكتروني",
     labelMessage: "الرسالة",
     send: "إرسال الرسالة",
-    footerText: "© 2026 راند مغيرة. بُني باستخدام HTML وCSS وJavaScript.",
+    footerText: "© 2026 رند مغايرة. بُني باستخدام HTML وCSS وJavaScript.",
     errorFields: "يرجى تعبئة جميع الحقول وإدخال بريد إلكتروني صحيح.",
     thanks: "شكراً {name}، رسالتك جاهزة للإرسال.",
     langButton: "English"
