@@ -1,0 +1,243 @@
+/* ---------- Theme variables ---------- */
+:root {
+  --bg: #eef3f2;
+  --surface: #ffffff;
+  --text: #16282a;
+  --muted: #4d6366;
+  --accent: #0f6b66;
+  --accent-text: #ffffff;
+  --border: #c9d7d5;
+}
+
+/* Dark theme: JavaScript sets data-theme="dark" on <html> */
+:root[data-theme="dark"] {
+  --bg: #0f1a1b;
+  --surface: #172628;
+  --text: #e6f0ef;
+  --muted: #9bb3b1;
+  --accent: #f0c84b;
+  --accent-text: #14201f;
+  --border: #2b4244;
+}
+
+/* ---------- Base ---------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.7;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}
+
+h1, h2, h3, nav, button, label {
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+}
+
+a { color: var(--accent); }
+
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+/* ---------- Navbar (Flexbox) ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  z-index: 10;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0.8rem 1.25rem;
+}
+
+.logo { font-weight: bold; text-decoration: none; font-size: 1.2rem; }
+
+.nav-links {
+  display: flex;
+  gap: 1.25rem;
+  list-style: none;
+}
+
+.nav-links a { text-decoration: none; color: var(--text); }
+.nav-links a:hover { color: var(--accent); }
+
+#theme-toggle {
+  padding: 0.45rem 0.9rem;
+  border: 2px solid var(--accent);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+#theme-toggle:hover { background: var(--accent); color: var(--accent-text); }
+
+/* ---------- Sections ---------- */
+.section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3.5rem 1.25rem;
+}
+
+.section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+/* About */
+.about {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+.about-photo {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--accent);
+  flex-shrink: 0;
+}
+.about-text h1 { font-size: 2.4rem; line-height: 1.2; margin-bottom: 1rem; }
+.about-text p { max-width: 60ch; margin-bottom: 0.8rem; color: var(--muted); }
+
+/* Skills grid */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+.skill {
+  flex: 1 1 150px;
+  padding: 1rem;
+  text-align: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+}
+
+/* Projects */
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+.project {
+  flex: 1 1 220px;
+  padding: 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-inline-start: 5px solid var(--accent);
+  border-radius: 6px;
+}
+.project h3 { margin-bottom: 0.4rem; }
+.project p { color: var(--muted); margin-bottom: 0.8rem; }
+
+/* Hobbies */
+.hobbies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  list-style: none;
+}
+.hobbies li {
+  padding: 0.4rem 1rem;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+}
+
+/* Contact form */
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 520px;
+}
+#contact-form input,
+#contact-form textarea {
+  padding: 0.65rem;
+  font: inherit;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+#contact-form input.invalid,
+#contact-form textarea.invalid { border-color: #c0392b; }
+#contact-form button {
+  align-self: flex-start;
+  margin-top: 0.6rem;
+  padding: 0.6rem 1.3rem;
+  background: var(--accent);
+  color: var(--accent-text);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+#form-status { min-height: 1.5rem; }
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+}
+
+/* ---------- Media queries ---------- */
+@media (max-width: 768px) {
+  .about { flex-direction: column; text-align: center; }
+  .about-photo { width: 190px; height: 190px; }
+  .about-text h1 { font-size: 2rem; }
+}
+
+@media (max-width: 600px) {
+  .navbar { flex-wrap: wrap; justify-content: center; }
+  .nav-links { flex-wrap: wrap; justify-content: center; gap: 0.8rem; order: 3; width: 100%; }
+  .section { padding: 2.5rem 1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  body { transition: none; }
+}
+
+/* ---------- Language switcher: RTL support ---------- */
+.nav-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+#lang-toggle {
+  padding: 0.45rem 0.9rem;
+  border: 2px solid var(--accent);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+#lang-toggle:hover { background: var(--accent); color: var(--accent-text); }
+
+/* Arabic needs a font with Arabic glyphs and slightly taller lines */
+:root[lang="ar"] body,
+:root[lang="ar"] h1,
+:root[lang="ar"] h2,
+:root[lang="ar"] h3,
+:root[lang="ar"] nav,
+:root[lang="ar"] button,
+:root[lang="ar"] label,
+:root[lang="ar"] .skill {
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+}
+:root[lang="ar"] body { line-height: 1.9; }
